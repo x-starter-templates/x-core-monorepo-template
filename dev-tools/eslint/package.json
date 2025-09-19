@@ -1,0 +1,51 @@
+{
+	"name": "@x-devtools/eslint",
+	"description": "",
+	"version": "1.0.0",
+	"author": "xjiaxiang86@gmail.com",
+	"dependencies": {
+		"@eslint/eslintrc": "^3",
+		"@eslint/js": "^9.27.0",
+		"@next/eslint-plugin-next": "^15.3.1",
+		"@types/node": "^22.15.21",
+		"@typescript-eslint/eslint-plugin": "^8.31.1",
+		"@typescript-eslint/parser": "^8.32.0",
+		"eslint-config-next": "15.3.1",
+		"eslint-config-prettier": "^10.1.2",
+		"eslint-config-turbo": "^2.5.4",
+		"eslint-import-resolver-typescript": "^4.3.4",
+		"eslint-plugin-import": "^2.31.0",
+		"eslint-plugin-import-x": "^4.12.2",
+		"eslint-plugin-prettier": "^5.3.1",
+		"eslint-plugin-react-hooks": "^5.2.0",
+		"eslint-plugin-storybook": "^9.0.13",
+		"eslint-plugin-svelte": "3.5.1",
+		"globals": "^16.0.0",
+		"typescript-eslint": "^8.31.1"
+	},
+	"devDependencies": {
+		"@x-devtools/prettier": "workspace:^",
+		"eslint": "^9.35.0",
+		"prettier": "^3.5.3",
+		"typescript": "^5"
+	},
+	"exports": {
+		".": {
+			"types": "./src/index.d.mts",
+			"import": "./src/index.mjs"
+		}
+	},
+	"imports": {
+		"#entry": "./src/index.mjs"
+	},
+	"license": "ISC",
+	"peerDependencies": {
+		"eslint": "^9.35.0"
+	},
+	"scripts": {
+		"format:check": "prettier --check \"**/*.{mjs,ts,md,json}\"",
+		"format:fix": "prettier --write \"**/*.{mjs,ts,md,json}\"",
+		"lint": "pnpm run lint:es"
+	},
+	"type": "module"
+}

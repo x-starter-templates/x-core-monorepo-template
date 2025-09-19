@@ -1,0 +1,42 @@
+{
+	"name": "x-core-monorepo-template",
+	"version": "1.0.0",
+	"description": "",
+	"type": "module",
+	"main": "index.js",
+	"scripts": {
+		"dev": "",
+		"build": "",
+		"preview": "",
+		"lint": "",
+		"format": "",
+		"clean": "git clean -xdf node_modules dist",
+		"test": "echo \"Error: no test specified\" && exit 0",
+		"prepare": "husky"
+	},
+	"keywords": [
+		"template",
+		"monorepo",
+		"pnpm",
+		"turbo"
+	],
+	"engines": {
+		"pnpm": ">=10",
+		"node": ">=22"
+	},
+	"author": "xjiaxiang86@gmail.com",
+	"license": "BSD",
+	"packageManager": "pnpm@10.6.5",
+	"devDependencies": {
+		"@commitlint/cli": "^19.8.1",
+		"@commitlint/config-conventional": "^19.8.1",
+		"@turbo/gen": "^2.5.6",
+		"@x-devtools/prettier": "workspace:^",
+		"husky": "^9.1.7",
+		"lint-staged": "^16.1.6",
+		"prettier": "^3.5.3",
+		"syncpack": "14.0.0-alpha.21",
+		"tsx": "^4.20.5",
+		"turbo": "^2.5.6"
+	}
+}
