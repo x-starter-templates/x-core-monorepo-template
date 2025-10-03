@@ -13,13 +13,8 @@ export default {
 	// semver validation rules configuration
 	semverGroups: [
 		{
-			label: 'dependencies should use exact versions',
-			dependencyTypes: ['prod'],
-			range: '',
-		},
-		{
-			label: 'devDependencies should use exact versions',
-			dependencyTypes: ['dev'],
+			label: 'dependencies(prod, dev, peer) should use exact versions',
+			dependencyTypes: ['prod', 'dev', 'peer'],
 			range: '',
 		},
 	],
@@ -28,8 +23,8 @@ export default {
 		{
 			label: 'Use workspace protocol when developing local packages',
 			dependencies: ['$LOCAL'],
-			dependencyTypes: ['dev', 'prod'],
-			pinVersion: 'workspace:*',
+			dependencyTypes: ['dev', 'prod', 'peer'],
+			pinVersion: 'workspace:^',
 		},
 	],
 	// treat multiple packages as one package

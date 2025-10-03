@@ -1,11 +1,11 @@
 {
 	"name": "@x-devtools/prettier",
-	"version": "1.0.0",
 	"description": "prettier config",
+	"version": "1.0.0",
 	"author": "xjiaxiang86@gmail.com",
 	"dependencies": {
-		"prettier": "^3.5.3",
-		"prettier-plugin-tailwindcss": "^0.6.12"
+		"prettier": "3.6.2",
+		"prettier-plugin-tailwindcss": "0.6.14"
 	},
 	"exports": {
 		".": {
@@ -14,10 +14,10 @@
 		}
 	},
 	"main": "index.mjs",
+	"packageManager": "pnpm@10.6.5",
 	"prettier": "./index.mjs",
 	"private": true,
+	"scripts": {},
 	"type": "module",
-	"types": "index.d.ts",
-	"packageManager": "pnpm@10.6.5",
-	"scripts": {}
+	"types": "index.d.ts"
 }

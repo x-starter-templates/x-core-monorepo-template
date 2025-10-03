@@ -17,6 +17,12 @@
 			"dependsOn": ["^lint"],
 			"cache": false
 		},
+		"format": {
+			"cache": false
+		},
+		"//#format": {
+			"cache": false
+		},
 		"clean": {
 			"cache": false
 		},
