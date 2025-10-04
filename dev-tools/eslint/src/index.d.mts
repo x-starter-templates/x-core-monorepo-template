@@ -1,16 +1,16 @@
 import { default as envBrowser } from './env-browser.mjs';
 import { default as envNode } from './env-node.mjs';
 import { default as importRecommend } from './import.mjs';
-import { default as nextjs } from './config-nextjs.mjs';
+// import { default as nextjs } from './config-nextjs.mjs';
 import { default as recommend } from './config-recommend.mjs';
 import { default as storybook } from './storybook.mjs';
-import { default as svelte } from './svelte.mjs';
+// import { default as svelte } from './svelte.mjs';
 export {
 	importRecommend,
-	nextjs,
+	// nextjs,
 	recommend,
 	storybook,
-	svelte,
+	// svelte,
 	envNode,
 	envBrowser,
 };

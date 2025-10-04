@@ -1,5 +1,5 @@
 // config配置
-import { default as nextjs } from './config-nextjs.mjs';
+// import { default as nextjs } from './config-nextjs.mjs';
 import { default as recommend } from './config-recommend.mjs';
 
 // 环境
@@ -15,8 +15,8 @@ export {
 	envBrowser,
 	envNode,
 	importRecommend,
-	nextjs,
+	// nextjs,
 	recommend,
 	storybook,
-	svelte,
+	// svelte,
 };
