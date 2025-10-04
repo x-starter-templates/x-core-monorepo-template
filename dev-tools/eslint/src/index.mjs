@@ -8,7 +8,7 @@ import { default as envNode } from './env-node.mjs';
 
 // plugin
 import { default as importRecommend } from './import.mjs';
-import { default as storybook } from './storybook.mjs';
+// import { default as storybook } from './storybook.mjs';
 // import { default as svelte } from './svelte.mjs';
 
 export {
@@ -17,6 +17,6 @@ export {
 	importRecommend,
 	// nextjs,
 	recommend,
-	storybook,
+	// storybook,
 	// svelte,
 };
