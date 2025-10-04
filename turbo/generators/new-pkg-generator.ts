@@ -1,4 +1,5 @@
 import type { PlopTypes } from '@turbo/gen';
+import { type } from 'os';
 import path from 'path';
 
 type Answers = {
@@ -10,6 +11,11 @@ type Answers = {
 	 * package name, in kebab-case (e.g., my-package)
 	 */
 	readonly name: string;
+
+	/**
+	 * confirm to create the package
+	 */
+	readonly confirm: boolean;
 
 	/**
 	 * full package name with scope (e.g., @scope/name)
@@ -63,6 +69,10 @@ export function createNewPackageGenerator(plop: PlopTypes.NodePlopAPI) {
 		],
 		actions(data) {
 			const answers = data as Answers;
+			if (!answers.confirm) {
+				console.log('Package creation cancelled.');
+				return [];
+			}
 
 			const { packageName, packageFolder } = getInfoFromType(answers);
 
