@@ -1,0 +1,46 @@
+{{ packageName }}
+
+{{ description }}
+
+
+## features
+
+
+## usage
+```ts
+
+import {	} from '{{ packageName }}';
+
+
+
+```
+
+
+## structure
+
+
+## interface design
+
+### entry points
+```json
+{
+	"exports": {
+		".": {
+			"import": "./dist/index.mjs",
+			"require": "./dist/index.cjs"
+		},
+	}
+}
+```
+
+| entry point | description               | remark                |
+| ----------- | ------------------------- | --------------------- |
+| .           | 默认入口，包含主要功能    |
+
+### scripts
+
+| script     | command                | description          | remark         |
+| ---------- | ---------------------- | -------------------- | -------------- |
+| dev        | `pnpm run dev`         | 本地开发             |                |
+| build      | `pnpm run build`       | 构建项目             | |
+

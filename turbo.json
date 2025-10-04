@@ -17,10 +17,14 @@
 			"dependsOn": ["^lint"],
 			"cache": false
 		},
+		"lint:fix": {
+			"dependsOn": ["^lint:fix"],
+			"cache": false
+		},
 		"format": {
 			"cache": false
 		},
-		"//#format": {
+		"format:fix": {
 			"cache": false
 		},
 		"clean": {

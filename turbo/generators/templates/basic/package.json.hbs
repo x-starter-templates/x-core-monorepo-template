@@ -1,0 +1,43 @@
+{
+  "name": "{{ packageName }}",
+  "private": true,
+  "version": "0.1.0",
+  "author": "xjiaxiang86@gmail.com",
+	"exports": {
+		".": {
+			"types": "./src/index.ts",
+			"import": "./src/index.ts"
+		}
+	},
+  "imports": {
+    "#*": "./src/*",
+    "#entry": "./src/index.ts"
+  },
+  "typesVersions": {
+    "*": {
+      "*": [
+        "src/*"
+      ]
+    }
+  },
+  "license": "MIT",
+  "scripts": {
+    "clean": "rm -rf .turbo node_modules dist",
+		"format": "prettier --check \"**/*.{mjs,ts}\"",
+		"format:fix": "prettier --write \"**/*.{mjs,ts}\"",
+		"lint": "oxlint . && eslint .",
+		"lint:fix": "oxlint . --fix && eslint . --fix",
+		"test": "vitest run --passWithNoTests",
+		"test:coverage": "vitest run --coverage"
+  },
+  "devDependencies": {
+    "@x-devtools/eslint": "workspace:^",
+    "@x-devtools/prettier": "workspace:^",
+    "@x-devtools/typescript": "workspace:^"
+  },
+  "dependecies": {
+
+  },
+  "peerDependencies": {
+  }
+}
