@@ -5,7 +5,7 @@ type Answers = {
 	/**
 	 * package type，
 	 */
-	readonly type: 'packaage' | 'app' | 'feature';
+	readonly type: 'package' | 'app' | 'feature';
 	/**
 	 * package name, in kebab-case (e.g., my-package)
 	 */
@@ -40,51 +40,43 @@ export function createNewPackageGenerator(plop: PlopTypes.NodePlopAPI) {
 				name: 'type',
 				message: 'Select the type of package:',
 				choices: [
-					{ name: 'Standard Package(common ui or tools)', value: 'packaage' },
+					{ name: 'Standard Package(common ui or tools)', value: 'package' },
 					{ name: 'Application', value: 'app' },
 					{
 						name: "Feature Module(app's feature module, like auth, analysics, team etc)",
 						value: 'feature',
 					},
 				],
-				default: 'packaage',
+				default: 'package',
+			},
+			{
+				type: 'confirm',
+				name: 'confirm',
+				message: (answers) => {
+					const { packageName, scope, packageFolder } = getInfoFromType(
+						answers as Answers,
+					);
+					return `\nAbout to create a new package:\n\n- Package Name: ${packageName}\n- Scope: ${scope}\n- Folder: ${packageFolder}\n\nContinue?`;
+				},
+				default: true,
 			},
 		],
 		actions(data) {
 			const answers = data as Answers;
 
-			let scope = '';
-			let packageFolder = '';
-			switch (answers.type) {
-				case 'app':
-					scope = '@x-apps';
-					packageFolder = 'apps';
-					break;
-				case 'feature':
-					scope = '@x-features';
-					packageFolder = 'features';
-					break;
-				case 'packaage':
-				default:
-					scope = '@x-pkg';
-					packageFolder = 'packages';
-					break;
-			}
+			const { packageName, packageFolder } = getInfoFromType(answers);
 
-			const name = path.basename(answers.name);
-			const fullPackageName = `${scope}/${name}`;
-
-			answers.packageName = fullPackageName;
+			answers.packageName = packageName;
 
 			return [
 				{
 					type: 'add',
-					path: `${packageFolder}/${name}/.gitignore`,
+					path: `${packageFolder}/.gitignore`,
 					templateFile: '.gitignore.hbs',
 				},
 				{
 					type: 'addMany',
-					destination: `${packageFolder}/${name}`,
+					destination: `${packageFolder}`,
 					templateFiles: 'templates/basic/**',
 					base: 'templates/basic',
 					abortOnFail: true,
@@ -109,4 +101,46 @@ export function createNewPackageGenerator(plop: PlopTypes.NodePlopAPI) {
 			];
 		},
 	});
+}
+
+/**
+ * Returns package information based on the provided type and name.
+ *
+ * Determines the scope and package folder according to the `type` property of the `answer` object.
+ * Supported types are: 'app', 'e2e', 'feature', and 'package' (default).
+ * The returned object includes the normalized package name, scope, and folder path.
+ *
+ * @param answer - An object containing the type and name of the package.
+ * @returns An object with the following properties:
+ * - `name`: The base name of the package.
+ * - `packageName`: The scoped package name (e.g., `@x-apps/my-app`).
+ * - `scope`: The scope string (e.g., `@x-apps`).
+ * - `packageFolder`: The folder path for the package (e.g., `apps/my-app`).
+ */
+function getInfoFromType(answer: Answers) {
+	let scope = '';
+	let packageFolder = '';
+	switch (answer.type) {
+		case 'app':
+			scope = '@x-apps';
+			packageFolder = 'apps';
+			break;
+		case 'feature':
+			scope = '@x-features';
+			packageFolder = 'features';
+			break;
+		case 'package':
+		default:
+			scope = '@x-pkg';
+			packageFolder = 'packages';
+			break;
+	}
+
+	const name = path.basename(answer.name);
+	return {
+		name,
+		packageName: `${scope}/${name}`,
+		scope,
+		packageFolder: `${packageFolder}/${answer.name}`,
+	};
 }
