@@ -34,8 +34,8 @@
 	"main": "index.js",
 	"packageManager": "pnpm@10.6.5",
 	"scripts": {
-		"dev": "",
-		"build": "",
+		"dev": "turbo dev",
+		"build": "turbo build",
 		"preview": "",
 		"lint": "turbo lint",
 		"lint:fix": "turbo lint:fix",

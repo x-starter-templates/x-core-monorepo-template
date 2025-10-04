@@ -1,5 +1,4 @@
 import type { PlopTypes } from '@turbo/gen';
-import { type } from 'os';
 import path from 'path';
 
 type Answers = {
@@ -82,13 +81,13 @@ export function createNewPackageGenerator(plop: PlopTypes.NodePlopAPI) {
 				{
 					type: 'add',
 					path: `${packageFolder}/.gitignore`,
-					templateFile: '.gitignore.hbs',
+					templateFile: 'new-pkg/.gitignore.hbs',
 				},
 				{
 					type: 'addMany',
 					destination: `${packageFolder}`,
-					templateFiles: 'templates/basic/**',
-					base: 'templates/basic',
+					templateFiles: 'new-pkg/templates/**',
+					base: 'new-pkg/templates',
 					abortOnFail: true,
 					globOptions: {
 						dot: true,
