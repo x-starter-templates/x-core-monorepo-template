@@ -46,7 +46,6 @@
 		"test:coverage": "vitest run --coverage",
 		"--------------------miscellaneous---------------------------": "",
 		"prepare": "husky",
-		"postinstall": "syncpack lint",
 		"gen": "turbo gen",
 		"clean:all": "turbo clean"
 	}
