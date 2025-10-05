@@ -37,8 +37,8 @@
 			"import": "./src/svelte.mjs"
 		},
 		"./next": {
-			"types": "./src/config-next.d.mts",
-			"import": "./src/config-next.mjs"
+			"types": "./src/config-nextjs.d.mts",
+			"import": "./src/config-nextjs.mjs"
 		}
 	},
 	"imports": {

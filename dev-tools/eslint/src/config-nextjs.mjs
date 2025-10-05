@@ -3,7 +3,6 @@ import { fileURLToPath } from 'url';
 import { FlatCompat } from '@eslint/eslintrc';
 import prettier from 'eslint-plugin-prettier/recommended';
 import { commons } from './common.mjs';
-import importEslint from './import.mjs';
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = dirname(__filename);
@@ -18,7 +17,6 @@ const compat = new FlatCompat({
 const eslintConfig = [
 	...compat.extends('next', 'next/typescript'),
 	prettier,
-	...importEslint,
 	...commons,
 	{
 		rules: {

@@ -8,9 +8,11 @@ export const commons = [
 			'node_modules/',
 			'dist/',
 			'build/',
+			'out/',
 			'.next/',
 			'.turbo/',
 			'coverage/',
+			'next-env.d.ts',
 		],
 	},
 	{
