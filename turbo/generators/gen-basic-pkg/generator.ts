@@ -1,5 +1,5 @@
 /* eslint-disable no-restricted-syntax */
-import type { PlopTypes } from '@turbo/gen';
+import console from 'node:console';
 import chalk from 'chalk';
 import {
 	descriptionPrompt,
@@ -7,7 +7,7 @@ import {
 	namePrompt,
 	typePrompt,
 } from '../utils/common-prompt';
-import console from 'node:console';
+import type { PlopTypes } from '@turbo/gen';
 
 type Answers = {
 	/**

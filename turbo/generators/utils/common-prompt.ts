@@ -1,5 +1,5 @@
-import type { PlopTypes } from '@turbo/gen';
 import path from 'node:path';
+import type { PlopTypes } from '@turbo/gen';
 
 type Answers = {
 	readonly type: 'package' | 'app' | 'feature';

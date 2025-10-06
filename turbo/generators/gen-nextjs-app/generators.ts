@@ -1,11 +1,11 @@
 /* eslint-disable no-restricted-syntax */
-import type { PlopTypes } from '@turbo/gen';
 import chalk from 'chalk';
 import {
-	namePrompt,
 	descriptionPrompt,
 	getInfoFromType,
+	namePrompt,
 } from '../utils/common-prompt';
+import type { PlopTypes } from '@turbo/gen';
 
 type Answers = {
 	/**

@@ -1,11 +1,11 @@
 /* eslint-disable no-restricted-syntax */
-import type { PlopTypes } from '@turbo/gen';
+import chalk from 'chalk';
 import {
 	descriptionPrompt,
 	getInfoFromType,
 	namePrompt,
 } from '../utils/common-prompt';
-import chalk from 'chalk';
+import type { PlopTypes } from '@turbo/gen';
 
 type Answers = {
 	readonly type: 'app';
