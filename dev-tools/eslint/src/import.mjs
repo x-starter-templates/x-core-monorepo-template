@@ -23,9 +23,8 @@ const eslintConfig = [
 			'import-x/no-extraneous-dependencies': [
 				'error',
 				{
-					// 不允许import devDependencies
-					// 如果要更精细话控制，可以使用regex
-					devDependencies: false,
+					// non src folder can import devDependencies
+					devDependencies: ['!**/src/**'],
 				},
 			],
 			'import-x/no-cycle': [

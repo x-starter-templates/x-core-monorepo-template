@@ -5,7 +5,7 @@ import oxlint from 'eslint-plugin-oxlint';
 import prettier from 'eslint-plugin-prettier/recommended';
 import { configs as tsConfigs } from 'typescript-eslint';
 import { commons } from './common.mjs';
-
+import importConfig from './import.mjs';
 /**
  * @type {import('eslint').Linter.Config[]}
  */
@@ -13,6 +13,7 @@ const eslintConfig = [
 	js.configs.recommended,
 	...tsConfigs.recommended,
 	prettier,
+	...importConfig,
 	...commons,
 	// oxlint should be the last one
 	// Turn off all rules already supported by oxlint.

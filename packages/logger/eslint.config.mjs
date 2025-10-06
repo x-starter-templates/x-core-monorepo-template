@@ -1,4 +1,4 @@
-import { recommend, envNode } from '@x-devtools/eslint';
+import { envNode, recommend } from '@x-devtools/eslint';
 
 /**
  * @type {import('eslint').Linter.Config[]}
