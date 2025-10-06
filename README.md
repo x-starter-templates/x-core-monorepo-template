@@ -91,5 +91,33 @@ pnpm run gen basic --args "name" "type" "description" "yes"
 
 
 ## Code Style Guide
+* the import path in subpackage should be relative or use `imports` field to map the import path to the actual path, for example:
+```
+|-- subpackage
+|  |-- src
+|  |  |-- index.ts
+|  |  |-- utils.ts
+|  |  |-- components.ts
+```
+
+and the `imports` field in `package.json` should be like this:
+```json
+"imports": {
+  "#*": "./src/*"
+}
+```
+
+when you want to import `utils.ts` in `components.ts`, you can use the following ways:
+```ts
+// components.ts
+// relative import
+import { utils } from './utils';
+```
+or
+```ts
+// components.ts
+// imports field import
+import { utils } from '#/utils';
+```
 
 
