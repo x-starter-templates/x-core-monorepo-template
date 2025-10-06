@@ -15,4 +15,7 @@ export default [
 			'turbo',
 		],
 	},
+	{
+		ignores: ['turbo/generators/templates'],
+	},
 ];

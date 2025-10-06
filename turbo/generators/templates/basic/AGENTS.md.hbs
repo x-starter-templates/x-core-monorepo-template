@@ -1,4 +1,4 @@
-{{ packageName }}
+## {{ packageName }} Agent
 
 {{ description }}
 
@@ -7,40 +7,37 @@
 
 
 ## usage
-```ts
-
-import {	} from '{{ packageName }}';
-
+```
+import { } from '{{ packageName }}';
 
 
 ```
 
-
-## structure
-
-
 ## interface design
+
+### architecture design
+```mermaid
+```
 
 ### entry points
 ```json
 {
 	"exports": {
-		".": {
-			"import": "./dist/index.mjs",
-			"require": "./dist/index.cjs"
-		},
+		".": "./src/index.ts"
 	}
 }
 ```
 
 | entry point | description               | remark                |
 | ----------- | ------------------------- | --------------------- |
-| .           | 默认入口，包含主要功能    |
+| .           | default entry point, contains main features | |
 
 ### scripts
 
 | script     | command                | description          | remark         |
 | ---------- | ---------------------- | -------------------- | -------------- |
-| dev        | `pnpm run dev`         | 本地开发             |                |
-| build      | `pnpm run build`       | 构建项目             | |
+| dev        | `pnpm run dev`         | local dev             |                |
+| build      | `pnpm run build`       | build project             | |
 
+
+### miscellaneous

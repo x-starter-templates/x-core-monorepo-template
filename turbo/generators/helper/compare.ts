@@ -42,15 +42,12 @@ export function registerCompareHelper(plop: PlopTypes.NodePlopAPI) {
 			},
 		};
 
-		// @ts-expect-error -- IGNORE --
 		if (!operators[operator])
 			throw new Error(
 				"Handlerbars Helper 'compare' doesn't know the operator " + operator,
 			);
 
-		const result =
-			// @ts-expect-error -- IGNORE --
-			operators[operator](a, b);
+		const result = operators[operator](a, b);
 
 		if (!!result) {
 			return true;

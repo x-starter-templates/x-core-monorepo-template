@@ -1,6 +1,10 @@
 
 ## Project Description
-This project is a monorepo managed by `pnpm` and `turbo`, which contains multiple independent functional modules, referred to as `mono packages`. Each `mono package` can be developed, tested independently, and can also be combined to form a complete application.
+This project is designed for the purpose of creating a monorepo template for the startup.
+
+## Features
+* unified scripts: all subpackages will be created with same scripts interface, which makes it easy to maintain and extend.
+* unified code style and lint tools: all subpackages will use the same code style and lint tools, which makes it easy to maintain and extend too.
 
 ### Terminology Explanation
 
@@ -63,6 +67,27 @@ the follow is the scripts defined in `root package`
 | test          | `pnpm run test`          | test                                                                                           |        |
 | test:coverage | `pnpm run test:coverage` | test and generate coverage reporter                                                            |        |
 | gen           | `pnpm run gen`           | geneate new function                                                                           |        |
+
+### `gen` script
+
+`gen` script is used to generate new subpackage. There are several types of subpackage can be generated:
+* basic: a basic subpackage, which contains the basic structure and scripts.
+* nextjs: a nextjs subpackage, which contains the nextjs structure and scripts.
+* remix: a remix subpackage, which contains the remix structure and scripts.
+
+You can use it like this:
+```bash
+# for iterative generation
+pnpm run gen
+
+# pass generator type
+pnpm run gen basic
+pnpm run gen nextjs
+pnpm run gen remix
+
+# pass parameters to the generator
+pnpm run gen basic --args "name" "type" "description" "yes"
+```
 
 
 ## Code Style Guide
