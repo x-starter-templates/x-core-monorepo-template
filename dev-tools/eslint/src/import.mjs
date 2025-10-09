@@ -38,6 +38,7 @@ const eslintConfig = [
 			'import-x/order': [
 				'error',
 				{
+					'newlines-between': 'always',
 					groups: [
 						'builtin',
 						'external',
