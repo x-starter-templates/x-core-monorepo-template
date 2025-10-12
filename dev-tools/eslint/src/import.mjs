@@ -25,6 +25,7 @@ const eslintConfig = [
 				{
 					// non src folder can import devDependencies
 					devDependencies: ['!**/src/**'],
+					whitelist: ['vitest'],
 				},
 			],
 			'import-x/no-cycle': [

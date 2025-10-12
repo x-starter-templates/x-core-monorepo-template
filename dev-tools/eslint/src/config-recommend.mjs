@@ -4,6 +4,7 @@ import js from '@eslint/js';
 import oxlint from 'eslint-plugin-oxlint';
 import prettier from 'eslint-plugin-prettier/recommended';
 import { configs as tsConfigs } from 'typescript-eslint';
+
 import { commons } from './common.mjs';
 import importConfig from './import.mjs';
 /**

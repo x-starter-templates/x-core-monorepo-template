@@ -1,4 +1,5 @@
 import pino from 'pino';
+
 import type { Logger } from './type';
 export { Logger };
 
